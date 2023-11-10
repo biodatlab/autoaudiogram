@@ -1,0 +1,14 @@
+path: C:\Users\earth\OneDrive\Desktop\Audiogram\src\data_extracter\symbol_detection\data
+train: images\train
+val: images\test
+
+# Classes
+names:
+  0: Air Rt Unmasked
+  1: Air Lt Unmasked
+  2: Air Rt Masked
+  3: Air Lt masked
+  4: Bone Rt Unmasked
+  5: Bone Lt Unmasked
+  6: Bone Rt Masked
+  7: Bone Lt Masked

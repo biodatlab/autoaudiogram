@@ -1,0 +1,8 @@
+path: C:\Users\earth\OneDrive\Desktop\Audiogram\src\data_extracter\graph_table\data
+train: images\train
+val: images\train
+
+# Classes
+names:
+  0: ear_graph
+  1: pta_table
