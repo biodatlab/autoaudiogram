@@ -89,21 +89,36 @@ python -m train --path <path to train file> # python -m train --path "data/data_
 
 ## Object Detection
 
-Summary of object detection evaluation 
+mAP score of each audiological symbol
 
-mAP score of each symbol 
-![mAP_symbol](figure/mAP_symbol.png)
+| Symbols | :o:       | :x:      | < | > | :white_square_button: | △ | [ | ] |
+|---------|-----------|----------|--------------|---------------|------------------------|-----------------------|------------------------|-------------------------|
+| YOLOv5  | 0.957     | 0.925    | 0.848        | 0.841         | 0.833                  | 0.986                 | 0.826                  | 0.875                   |
+| YOLOv8  | 0.945     | 0.945    | 0.857        | 0.876         | 0.915                  | 0.85                  | 0.817                  | 0.944                   |
+
 
 ## Hearing severity classification
 
-Summary of model train from automatic extraction
+Hearing loss classification performance of top-5 models using AutoML.
 
-![automatic_extraction](figure/model_performance_automatic_extract.png)
+**Automatic feature extraction**
+| Model                          | Test    | Test AUC | Test Recall | Test Precision | Test F1 Score |
+|-------------------------------|---------|----------|-------------|----------------|---------------|
+| Gradient Boosting              | 0.9472  | 0.9873   | 0.9472      | 0.9473         | 0.9471        |
+| Light Gradient Boosting Machine| 0.9401  | 0.9883   | 0.9401      | 0.941          | 0.9401        |
+| Random Forest                  | 0.9415  | 0.9866   | 0.9415      | 0.9417         | 0.9414        |
+| Decision Tree                  | 0.9215  | 0.9479   | 0.9215      | 0.9221         | 0.9213        |
+| Extra Trees                    | 0.9116  | 0.9856   | 0.9116      | 0.9126         | 0.9111        |
 
-Summary of model train from maunal extraction 
+**Manual feature extraction**
+| Model                          | Test    | Test AUC | Test Recall | Test Precision | Test F1 Score |
+|-------------------------------|---------|----------|-------------|----------------|---------------|
+| Gradient Boosting              | 0.9615  | 0.9901   | 0.9615      | 0.9616         | 0.9614        |
+| Light Gradient Boosting Machine| 0.9615  | 0.9877   | 0.9615      | 0.9618         | 0.9615        |
+| Random Forest                  | 0.9643  | 0.9839   | 0.9643      | 0.9645         | 0.9643        |
+| Decision Tree                  | 0.9144  | 0.9452   | 0.9144      | 0.9165         | 0.915         |
+| Extra Trees                    | 0.9501  | 0.9814   | 0.9501      | 0.9505         | 0.95          |
 
-![maunal_extraction](figure/model_performance_manual_extract.png)
-
-![confusion_matrix](figure/confusion_matrix.png)
+<img src="figure/confusion_matrix.png" alt="drawing" width="600"/>
 
 
