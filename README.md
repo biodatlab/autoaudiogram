@@ -81,19 +81,19 @@ python -m train --path <path to train file>
 
 # Evaluation
 
-1.object_detection
+## 1.Object Detection
 
-summary of object detection evaluation 
+Summary of Object Detection evaluation 
 
 mAP score of each symbol 
 ![mAP_symbol](figure/mAP_symbol.png)
 
-2.classification
+## 2.Classification
 
-summary of model train from automatic extraction 
+Summary of model train from automatic extraction 
 ![automatic_extraction](figure/model_performance_automatic_extract.png)
 
-summary of model train from maunal extraction 
+Summary of model train from maunal extraction 
 ![maunal_extraction](figure/model_performance_manual_extract.png)
 
 ![confusion_matrix](figure/confusion_matrix.png)
