@@ -2,7 +2,7 @@
 Object detection-based audiogram classification
 
 ## Overview
-AutoAudiogram is an object detection-based audiogram classification system. the model use object detection to detect the audiological symbols form audiogram then use to classify the degree of audiogram 
+AutoAudiogram is an object detection-based audiogram classification system. the model use object detection to detect the audiological symbols form audiogram then use to classify the degree of hearing loss severity
 
 ## Get Start
 1. Clone the repository: `git clone https://github.com/biodatlab/autoaudiogram.git`
