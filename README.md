@@ -4,6 +4,14 @@ Object detection-based audiogram classification
 ## Overview
 AutoAudiogram is an object detection-based audiogram classification system. the model use object detection to detect the audiological symbols form audiogram then use to classify the degree of hearing loss severity
 
+![figure1](figure/figure1.png)
+
+## Image annotation of object detection
+Example of image annotation
+
+![figure2](figure/figure2.png)
+
+
 ## Get Start
 1. Clone the repository: `git clone https://github.com/biodatlab/autoaudiogram.git`
 2. Navigate into the project directory: `cd autoaudiogram`
@@ -73,3 +81,4 @@ python -m train --path <path to train file>
 
 
 # Evaluation
+
