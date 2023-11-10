@@ -1,23 +1,27 @@
-# Autoaudiogram
-Object detection-based audiogram classification
+# Autoaudiogram: Object detection-based audiogram classification.
 
-## Overview
-AutoAudiogram is an object detection-based audiogram classification system. the model use object detection to detect the audiological symbols form audiogram then use to classify the degree of hearing loss severity
+AutoAudiogram is an object detection-based audiogram classification system. The model uses object detection to detect the audiological symbols
+from the audiogram and then use them to classify the degree of hearing loss severity.
 
-![figure1](figure/figure1.png)
+<img src="figure/figure1.png" alt="drawing" width="1000"/>
 
-## Image annotation of object detection
-Example of image annotation
+For the data collection, we annotation 200 audiograms including graphs, tables, and 8 audiological symbols.
 
-![figure2](figure/figure2.png)
+<img src="figure/figure2.png" alt="drawing" width="400"/>
 
-## Get Start
-1. Clone the repository: `git clone https://github.com/biodatlab/autoaudiogram.git`
-2. Navigate into the project directory: `cd autoaudiogram`
+## Get Started
+
+Clone the repository and navigate into the project directory
+
+```sh
+git clone https://github.com/biodatlab/autoaudiogram.git
+cd autoaudiogram
+```
 
 ## Graph and table training
-1. navigate to train directory `cd src/data_extracter/graph_table`
-2. organize folder in this directory 
+
+Navigate to the directory `cd src/data_extracter/graph_table` and organize the folder in this directory as follows
+
 ```
 graph_table
 |____data
@@ -29,14 +33,17 @@ graph_table
 |____train.ipynb
 |____train.py
 ```
-3. training
-```
+
+Then run `train.py` using
+
+```sh
 python -m train
 ```
 
 ## Audiological symbol training
-1. navigate to train directory `cd src/data_extracter/symbol_detection`
-2. organize folder in this directory 
+
+Navigate to the directory `cd src/data_extracter/symbol_detection` and organize the folder as follows
+
 ```
 symbol_detection
 |____data
@@ -48,13 +55,17 @@ symbol_detection
 |____train.ipynb
 |____train.py
 ```
-3. training
+
+Then run `train.py` using
+
 ```
 python -m train
 ```
+
 ## Severity classification
-1. navigate to train directory `cd src/classification`
-2. organize folder in this directory 
+
+Navigate to the directory `cd src/classification` and organize folder as follows
+
 ```
 |classification
 |____data
@@ -69,31 +80,28 @@ python -m train
 |____eval.ipynb
 |____train.ipynb
 ```
-3. training
-```
-python -m train --path <path to train file>
-```
-  Example 
-  ```
-  python -m train --path "data/data_extract.csv"
-  ```
 
+```
+python -m train --path <path to train file> # python -m train --path "data/data_extract.csv"
+```
 
 # Evaluation
 
-## 1.Object Detection
+## Object Detection
 
-Summary of Object Detection evaluation 
+Summary of object detection evaluation 
 
 mAP score of each symbol 
 ![mAP_symbol](figure/mAP_symbol.png)
 
-## 2.Classification
+## Hearing severity classification
 
-Summary of model train from automatic extraction 
+Summary of model train from automatic extraction
+
 ![automatic_extraction](figure/model_performance_automatic_extract.png)
 
 Summary of model train from maunal extraction 
+
 ![maunal_extraction](figure/model_performance_manual_extract.png)
 
 ![confusion_matrix](figure/confusion_matrix.png)
