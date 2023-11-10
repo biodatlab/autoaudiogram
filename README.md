@@ -66,10 +66,10 @@ python -m train
 ```
 python -m train --path <path to train file>
 ```
-example 
-```
-python -m train --path "data/data_extract.csv"
-```
+  Example 
+  ```
+  python -m train --path "data/data_extract.csv"
+  ```
 
 
 # Evaluation
