@@ -11,6 +11,8 @@ Example of image annotation
 
 ![figure2](figure/figure2.png)
 
+symbol label
+![symbol_label](figure\symbol_annotation.png)
 
 ## Get Start
 1. Clone the repository: `git clone https://github.com/biodatlab/autoaudiogram.git`
@@ -81,4 +83,22 @@ python -m train --path <path to train file>
 
 
 # Evaluation
+
+1.object_detection
+
+summary of object detection evaluation 
+
+mAP score of each symbol
+![mAP_symbol](figure\mAP_symbol.png)
+
+2.classification
+
+summary of model train from automatic extraction 
+![automatic_extraction](figure\model_performance_automatic_extract.png)
+
+summary of model train from maunal extraction 
+![maunal_extraction](figure\model_performance_manual_extract.png)
+
+![confusion_matrix](figure\confusion_matrix.png)
+
 
