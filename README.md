@@ -102,22 +102,22 @@ mAP score of each audiological symbol
 Hearing loss classification performance of top-5 models using AutoML.
 
 **Automatic feature extraction**
-| Model                          | Test    | Test AUC | Test Recall | Test Precision | Test F1 Score |
-|-------------------------------|---------|----------|-------------|----------------|---------------|
-| Gradient Boosting              | 0.9472  | 0.9873   | 0.9472      | 0.9473         | 0.9471        |
-| Light Gradient Boosting Machine| 0.9401  | 0.9883   | 0.9401      | 0.941          | 0.9401        |
-| Random Forest                  | 0.9415  | 0.9866   | 0.9415      | 0.9417         | 0.9414        |
-| Decision Tree                  | 0.9215  | 0.9479   | 0.9215      | 0.9221         | 0.9213        |
-| Extra Trees                    | 0.9116  | 0.9856   | 0.9116      | 0.9126         | 0.9111        |
+| **Model**                        | **Test Accuracy** | **Test AUC** | **Test Recall** | **Test Precision** | **Test F1 Score** |
+| -------------------------------- | ----------------- | -------- | ----------- | -------------- | -------------- |
+| Gradient Boosting Classifier      | 0.9401           | 0.9856   | 0.9401      | 0.9419         | 0.9388         |
+| Light Gradient Boosting Machine   | 0.9472           | 0.9842   | 0.9472      | 0.9472         | 0.9472         |
+| Random Forest Classifier          | 0.933            | 0.9806   | 0.933       | 0.9352         | 0.9317         |
+| Decision Tree Classifier          | 0.9344           | 0.9522   | 0.9344      | 0.9346         | 0.9335         |
+| Extra Trees Classifier            | 0.9044           | 0.9815   | 0.9044      | 0.9043         | 0.9033         |
 
 **Manual feature extraction**
-| Model                          | Test    | Test AUC | Test Recall | Test Precision | Test F1 Score |
-|-------------------------------|---------|----------|-------------|----------------|---------------|
-| Gradient Boosting              | 0.9615  | 0.9901   | 0.9615      | 0.9616         | 0.9614        |
-| Light Gradient Boosting Machine| 0.9615  | 0.9877   | 0.9615      | 0.9618         | 0.9615        |
-| Random Forest                  | 0.9643  | 0.9839   | 0.9643      | 0.9645         | 0.9643        |
-| Decision Tree                  | 0.9144  | 0.9452   | 0.9144      | 0.9165         | 0.915         |
-| Extra Trees                    | 0.9501  | 0.9814   | 0.9501      | 0.9505         | 0.95          |
+| **Model**                        | **Test Accuracy** | **Test AUC** | **Test Recall** | **Test Precision** | **Test F1 Score** |
+|----------------------------------|-------------------|--------------|-----------------|----------------|---------------|
+| Gradient Boosting Classifier      | 0.9629          | 0.9892     | 0.9629       | 0.9631         | 0.9629         |
+| Light Gradient Boosting Machine   | 0.9629          | 0.9861     | 0.9629       | 0.9630         | 0.9629         |
+| Random Forest Classifier          | 0.9643          | 0.9865     | 0.9643       | 0.9645         | 0.9643         |
+| Decision Tree Classifier          | 0.9272          | 0.9528     | 0.9272       | 0.9286         | 0.9275         |
+| Extra Trees Classifier            | 0.9501          | 0.9834     | 0.9501       | 0.9506         | 0.9500         |
 
 <img src="figure/confusion_matrix.png" alt="drawing" width="600"/>
 
