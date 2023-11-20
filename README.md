@@ -20,7 +20,7 @@ cd autoaudiogram
 
 ## Quick Started
 
-Navigate to the directory`cd autoaudiogram`
+Navigate to the directory `cd autoaudiogram`
 
 ```sh
 from processing import feature_extraction, preprocessing_feature, classified_feature
