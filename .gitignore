@@ -25,15 +25,19 @@ var/
 wheels/
 runs/
 share/python-wheels/
+src/classification/models/
 *.egg-info/
 .installed.cfg
 .vscode/
 *.pdf
 *.pptx
-*.pt
-*.pkl
 *.egg
 MANIFEST
+
+src/data_extracter/graph_table/yolov5nu.pt
+src/data_extracter/graph_table/yolov8n.pt
+src/data_extracter/symbol_detection/yolov5nu.pt
+src/data_extracter/symbol_detection/yolov8n.pt
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
