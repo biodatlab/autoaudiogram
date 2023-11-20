@@ -25,20 +25,20 @@ def feature_extraction(image_dir, filename, box_model_path = "models/yolov8_box.
     reader = easyocr.Reader(["en"], gpu=True)
 
     # extract data from image
-    predict_rt_df, predict_lt_df = extract_feature_from_image(
+    extract_rt_df, extract_lt_df = extract_feature_from_image(
         filename, image_dir, box_model, symbol_model, reader
     )
 
-    return predict_rt_df, predict_lt_df
+    return extract_rt_df, extract_lt_df
 
 
-def preprocessing_feature(predict_rt_df, predict_lt_df, interpolation=True):
+def preprocessing_feature(extract_rt_df, extract_lt_df, interpolation=True):
     """
     Preprocesses the extracted features from the given image.
 
     Args:
-        predict_rt_df (pandas.DataFrame): extracted features for the right ear.
-        predict_lt_df (pandas.DataFrame): extracted features for the left ear.
+        extract_rt_df (pandas.DataFrame): extracted features for the right ear.
+        extract_lt_df (pandas.DataFrame): extracted features for the left ear.
         interpolation (bool): If True, the data will be interpolated.
     
     Returns:
@@ -46,13 +46,13 @@ def preprocessing_feature(predict_rt_df, predict_lt_df, interpolation=True):
         pandas.DataFrame: preprocessed features for the left ear.
     """
     # post processing right and left data
-    predict_rt_df = postprocessing(predict_rt_df, interpolation=interpolation)
-    predict_lt_df = postprocessing(predict_lt_df, interpolation=interpolation)
+    feature_rt_df = postprocessing(extract_rt_df, interpolation=interpolation)
+    feature_lt_df = postprocessing(extract_lt_df, interpolation=interpolation)
 
-    return predict_rt_df, predict_lt_df
+    return feature_rt_df, feature_lt_df
 
 
-def classified_feature(predict_rt_df, predict_lt_df, model_path="models/extract_model"):
+def classified_feature(feature_rt_df, feature_lt_df, model_path="models/extract_model"):
     """
     Classifies the degree of hearing loss for the given right and left ear data.
 
@@ -69,8 +69,8 @@ def classified_feature(predict_rt_df, predict_lt_df, model_path="models/extract_
     label = ['Normal', 'Mild', 'Moderate', 'Moderately Severe', 'Severe', 'Profound']
 
     # classified degree of hearing loss
-    predict_right_hearing_loss = predict_model(classifier, data=predict_rt_df)
-    predict_left_hearing_loss = predict_model(classifier, data=predict_lt_df)
+    predict_right_hearing_loss = predict_model(classifier, data=feature_rt_df)
+    predict_left_hearing_loss = predict_model(classifier, data=feature_lt_df)
 
     # concat right and left data and rename index
     result = pd.concat([predict_right_hearing_loss, predict_left_hearing_loss], axis=0)
