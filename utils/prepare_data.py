@@ -1,15 +1,29 @@
 import os
 import shutil
 from sklearn.model_selection import train_test_split
+import numpy as np
 
 
 def copy_files(file_list, original_dir, new_dir):
+    """
+    file_list: list of files to copy
+    original_dir: directory where files are located
+    new_dir: directory where files will be copied to
+
+    Copy files from original directory to new directory
+    """
     for file in file_list:
         original_file_path = os.path.join(original_dir, file)
         shutil.copy(original_file_path, new_dir)
 
 
 def split_data(all_txt_dir, all_img_dir):
+    """
+    all_txt_dir: directory where all txt files are located
+    all_img_dir: directory where all img files are located
+
+    Split data into train and test
+    """
     # define directories
     train_txt_dir = os.path.join(all_txt_dir, "train")
     train_img_dir = os.path.join(all_img_dir, "train")
@@ -41,7 +55,6 @@ def split_data(all_txt_dir, all_img_dir):
     copy_files(test_txt_files, all_txt_dir, test_txt_dir)
     test_img_files = [txt_file.replace(".txt", ".jpg") for txt_file in test_txt_files]
     copy_files(test_img_files, all_img_dir, test_img_dir)
-
 
 if __name__ == "__main__":
     pass

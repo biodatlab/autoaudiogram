@@ -403,3 +403,23 @@ def concat_feature(predict_df, true_df):
     x_true_dfs = pd.concat(x_true_df_ls, axis=0)
     y_true_dfs = pd.concat(y_true_df_ls, axis=0)
     return x_true_dfs, y_true_dfs
+
+def postprocessing(predict_df, interpolation=True):
+    """
+    predict_df: dataframe of extracted data
+    interpolation: whether to interpolate missing data (boolean)
+
+    Postprocessing extracted data by rename and interpolate
+    """
+    column = ['pta_ac', 'pta_bc', 'sl', 'srt', 'pb', '250_ac', '500_ac', '1000_ac',
+    '2000_ac', '4000_ac', '6000_ac', '8000_ac', '500_bc', '1000_bc',
+    '2000_bc', '4000_bc']
+    predict_df = predict_df.T 
+    predict_df.columns = column
+
+    if interpolation:
+        predict_df = predict_df.replace('', np.nan)
+        predict_df = predict_df.interpolate(axis=1)
+
+    return predict_df
+
