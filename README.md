@@ -21,6 +21,7 @@ cd autoaudiogram
 ## Quick Started
 
 To make an inference on a given audiogram, navigate to the directory `cd autoaudiogram`
+you can access the sample image in the sample_image directory.
 
 ```py
 from processing import feature_extraction, preprocessing_feature, classified_feature
