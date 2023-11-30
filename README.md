@@ -18,6 +18,25 @@ git clone https://github.com/biodatlab/autoaudiogram.git
 cd autoaudiogram
 ```
 
+## Quick Started
+
+To make an inference on a given audiogram, navigate to the directory `cd autoaudiogram`
+
+```py
+from processing import feature_extraction, preprocessing_feature, classified_feature
+image_dir = "image_dir/" # change this to the directory of the image
+filename = "image1.jpg" # change this to the filename of the image
+# extract data from image
+extract_rt_df, extract_lt_df = feature_extraction(image_dir, filename)
+# preprocess data
+feature_rt_df, feature_lt_df = preprocessing_feature(extract_rt_df, extract_lt_df)
+# classify data
+print(classified_feature(feature_rt_df, feature_lt_df))
+```
+
+or you can use the `demo.ipynb` as a starter.
+
+
 ## Graph and table training
 
 Navigate to the directory `cd src/data_extracter/graph_table` and organize the folder in this directory as follows
