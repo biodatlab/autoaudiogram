@@ -1,11 +1,15 @@
+import pandas as pd
 from src.utils import extract_feature_from_image, postprocessing
 from ultralytics import YOLO
 from pycaret.classification import load_model, predict_model
 import easyocr
-import pandas as pd
 
 
-def feature_extraction(image_dir, filename, box_model_path = "models/yolov8_box.pt", symbol_model_path = "models/yolov8_symbol.pt"):
+def feature_extraction(
+    image_dir: str, filename: str,
+    box_model_path: str = "models/yolov8_box.pt",
+    symbol_model_path: str = "models/yolov8_symbol.pt"
+):
     """
     Extracts the features from the given image.
     
@@ -32,7 +36,7 @@ def feature_extraction(image_dir, filename, box_model_path = "models/yolov8_box.
     return extract_rt_df, extract_lt_df
 
 
-def preprocessing_feature(extract_rt_df, extract_lt_df, interpolation=True):
+def preprocessing_feature(extract_rt_df: pd.DataFrame, extract_lt_df: pd.DataFrame, interpolation: bool = True):
     """
     Preprocesses the extracted features from the given image.
 
@@ -52,7 +56,11 @@ def preprocessing_feature(extract_rt_df, extract_lt_df, interpolation=True):
     return feature_rt_df, feature_lt_df
 
 
-def classified_feature(feature_rt_df, feature_lt_df, model_path="models/extract_model"):
+def classified_feature(
+    feature_rt_df: pd.DataFrame,
+    feature_lt_df: pd.DataFrame,
+    model_path: str = "models/extract_model"
+):
     """
     Classifies the degree of hearing loss for the given right and left ear data.
 
