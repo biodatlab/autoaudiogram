@@ -38,6 +38,12 @@ feature_rt_df, feature_lt_df = preprocessing_feature(extract_rt_df, extract_lt_d
 print(classified_feature(feature_rt_df, feature_lt_df))
 ```
 
+To run the demo app
+
+```sh
+gradio app.py
+```
+
 or you can use the `demo.ipynb` as a starter.
 
 
@@ -144,4 +150,6 @@ Hearing loss classification performance of top-5 models using AutoML.
 
 <img src="figure/confusion_matrix.png" alt="drawing" width="600"/>
 
+## Data Access Request
 
+Access to our private dataset of 200 audiograms with annotation requires completion of a form. This ensures security and suitability for research/educational purposes. Submit the form [here](https://forms.gle/c62Bjw4aEpNmDuEP9) for consideration and we will grant access to the the dataset via [Google Drive](https://drive.google.com/drive/folders/1aF5JjGVDVjaxcmZ-OMQxqhOMn5XqyejH?usp=sharing).
